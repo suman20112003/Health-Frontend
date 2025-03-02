@@ -1,24 +1,16 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import App from "./App.jsx";
-import AppContextProvider from "./context/AppContext.jsx";
-import "./index.css";
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+import { BrowserRouter } from 'react-router-dom'
+import AppContextProvider from './context/AppContext.jsx'
 
-// Ensure the root element exists
-const rootElement = document.getElementById("root");
-if (!rootElement) {
-  throw new Error("Root element not found. Make sure 'index.html' has <div id='root'></div>");
-}
-
-const root = createRoot(rootElement);
-
-root.render(
+createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <AppContextProvider>
-        <App />
-      </AppContextProvider>
-    </BrowserRouter>
-  </StrictMode>
-);
+  <BrowserRouter>
+    <AppContextProvider>
+      <App />
+    </AppContextProvider>
+  </BrowserRouter>
+</StrictMode>
+)
